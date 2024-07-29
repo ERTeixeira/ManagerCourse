@@ -1,12 +1,11 @@
 package ManagerCourse.controller
 
-import ManagerCourses.dto.TopicoDto
+import ManagerCourses.dto.TopicoForm
 import ManagerCourses.dto.TopicoView
 import ManagerCourses.services.TopicoService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import ManagerCourses.model.Topico
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -26,7 +25,7 @@ class TopicoController(private val service: TopicoService) {
     }
 
     @PostMapping
-    fun cadastrar(@RequestBody dto: TopicoDto) {
+    fun cadastrar(@RequestBody dto: TopicoForm) {
        service.cadastrar(dto)
     }
 }

@@ -1,11 +1,9 @@
 package ManagerCourses.services
 
-import ManagerCourses.dto.TopicoDto
+import ManagerCourses.dto.TopicoForm
 import ManagerCourses.dto.TopicoView
 import org.springframework.stereotype.Service
-import ManagerCourses.model.Curso
 import ManagerCourses.model.Topico
-import ManagerCourses.model.Usuario
 import java.util.stream.Collectors
 
 
@@ -37,7 +35,7 @@ class TopicoService (
         )
     }
 
-    fun cadastrar(dto: TopicoDto) {
+    fun cadastrar(dto: TopicoForm) {
         topicos = topicos.plus(Topico(
             id = topicos.size.toLong() + 1,
             titulo = dto.titulo,

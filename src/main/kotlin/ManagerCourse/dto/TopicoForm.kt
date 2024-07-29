@@ -1,6 +1,6 @@
 package ManagerCourses.dto
 
-data class TopicoDto (
+data class TopicoForm (
     val titulo: String,
     val mensagem: String,
     val CursoId: Long,
