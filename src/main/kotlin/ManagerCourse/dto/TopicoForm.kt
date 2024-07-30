@@ -1,4 +1,4 @@
-package ManagerCourses.dto
+package ManagerCourse.dto
 
 data class TopicoForm (
     val titulo: String,

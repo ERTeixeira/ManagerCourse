@@ -1,6 +1,6 @@
-package ManagerCourses.dto
+package ManagerCourse.dto
 
-import ManagerCourses.model.StatusTopico
+import ManagerCourse.model.StatusTopico
 import java.time.LocalDateTime
 
 data class TopicoView (

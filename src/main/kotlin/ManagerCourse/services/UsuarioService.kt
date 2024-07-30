@@ -1,6 +1,6 @@
-package ManagerCourses.services
+package ManagerCourse.services
 
-import ManagerCourses.model.Curso
+import ManagerCourse.model.Curso
 import org.springframework.stereotype.Service
 import java.util.*
 

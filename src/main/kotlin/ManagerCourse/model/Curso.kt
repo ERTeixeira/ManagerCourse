@@ -1,4 +1,4 @@
-package ManagerCourses.model
+package ManagerCourse.model
 
 data class Curso (
     val id: Long? = null,

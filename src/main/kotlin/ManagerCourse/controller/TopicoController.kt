@@ -1,8 +1,8 @@
 package ManagerCourse.controller
 
-import ManagerCourses.dto.TopicoForm
-import ManagerCourses.dto.TopicoView
-import ManagerCourses.services.TopicoService
+import ManagerCourse.dto.TopicoForm
+import ManagerCourse.dto.TopicoView
+import ManagerCourse.services.TopicoService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController

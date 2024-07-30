@@ -1,48 +1,36 @@
-package ManagerCourses.services
+package ManagerCourse.services
 
-import ManagerCourses.dto.TopicoForm
-import ManagerCourses.dto.TopicoView
+import ManagerCourse.mapper.TopicoFormMapper
+import ManagerCourse.mapper.TopicoViewMapper
+import ManagerCourse.dto.TopicoForm
+import ManagerCourse.dto.TopicoView
 import org.springframework.stereotype.Service
-import ManagerCourses.model.Topico
+import ManagerCourse.model.Topico
 import java.util.stream.Collectors
 
 
 @Service
 class TopicoService (
     private var topicos: List<Topico> = ArrayList(),
-    private val cursoService: CursoService,
-    private val usuarioService: UsuarioService
+    private val topicoViewMapper: TopicoViewMapper,
+    private val topicoFormMapper: TopicoFormMapper
     ){
 
     fun listarTopicos(): List<TopicoView> {
-        return topicos.stream().map { topico ->TopicoView(
-            id = topico.id,
-            titulo = topico.titulo,
-            mensagem = topico.mensagem,
-            dataCriacao = topico.dataCriacao,
-            status = topico.status
-        ) }.collect(Collectors.toList())
+        return topicos.stream().map {
+            topico -> topicoViewMapper.map(topico)
+        }.collect(Collectors.toList())
     }
 
     fun getTopicoId(id: Long): TopicoView {
         val topico = topicos.stream().filter({topico -> topico.id == id}).findFirst().get()
-        return TopicoView(
-            id = topico.id,
-            titulo = topico.titulo,
-            mensagem = topico.mensagem,
-            dataCriacao = topico.dataCriacao,
-            status = topico.status
-        )
+        return topicoViewMapper.map(topico)
     }
 
     fun cadastrar(dto: TopicoForm) {
-        topicos = topicos.plus(Topico(
-            id = topicos.size.toLong() + 1,
-            titulo = dto.titulo,
-            mensagem = dto.mensagem,
-            curso = cursoService.buscarPorId(dto.CursoId),
-            autor = usuarioService.buscarPorId(dto.AutorId),
-        ))
+        val topico = topicoFormMapper.map(dto)
+        topico.id = topicos.size.toLong() + 1
+        topicos = topicos.plus(topico)
 
     }
 }

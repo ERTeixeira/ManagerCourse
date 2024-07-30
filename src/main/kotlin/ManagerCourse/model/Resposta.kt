@@ -1,4 +1,4 @@
-package ManagerCourses.model
+package ManagerCourse.model
 
 import java.time.LocalDateTime
 

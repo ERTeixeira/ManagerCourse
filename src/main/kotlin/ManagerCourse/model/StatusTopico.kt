@@ -1,4 +1,4 @@
-package ManagerCourses.model
+package ManagerCourse.model
 
 enum class StatusTopico {
     NAO_RESPONDIDO,

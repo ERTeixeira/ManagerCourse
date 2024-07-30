@@ -1,6 +1,6 @@
-package ManagerCourses.services
+package ManagerCourse.services
 
-import ManagerCourses.model.Usuario
+import ManagerCourse.model.Usuario
 import org.springframework.stereotype.Service
 
 @Service
